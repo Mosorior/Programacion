@@ -7,7 +7,7 @@ public class Ej10 {
 		System.out.print("Introduzca la cantidad de Mb: ");
 		
 		double mb = s.nextDouble();
-		System.out.println(mb + "Mb son " + (mb*1000) + "Kb.");
+		System.out.println(mb + "Mb son " + (mb*1024) + "Kb.");
 	}
 }
 
