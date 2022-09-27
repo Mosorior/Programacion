@@ -39,7 +39,7 @@ muestran los valores correctos, aunque los números no estén tabulados.*/
 				System.out.println("El IVA introducido no existe, se procederá con 21%.");
 				IVAp = 0.21;
 			}
-			double totalIVA = (BI*IVAp)+BI;
+		double totalIVA = (BI*IVAp)+BI;
 			
 		System.out.print("Introduzca un código promocional (nopro, mitad, meno5 o 5porc): ");
 		String code = s.next();
