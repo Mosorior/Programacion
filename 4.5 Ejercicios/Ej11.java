@@ -10,11 +10,11 @@ calcule los segundos que faltan para llegar a la medianoche.*/
         System.out.print("Introduzca los minutos: ");
         int m = s.nextInt();
 
-        if (h < 0 ||h > 24 || m < 0 || m >= 60){
+        if (h < 0 ||h > 23 || m < 0 || m >= 60){
         System.out.print("La hora es inválida.");
         }
         else{
-        System.out.println("Quedan " + ((24*60*60)-((h*60*60)+(m*60))) + "s para media noche.");
+        System.out.println("Quedan " + ((24*3600)-((h*3600)+(m*60))) + "s para media noche.");
         }
     }
 }

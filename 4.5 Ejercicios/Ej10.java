@@ -12,7 +12,7 @@ nacimiento.*/
         if (mes == 3 && dia >= 21 && dia < 31){
             System.out.println("Eres Aries.");
         }
-        if (mes == 4 && dia <= 20 && dia >=1){
+        if (mes == 4 && dia <= 20 && dia > 0){
             System.out.println("Eres Aries.");
         }
         if (mes == 4 && dia >= 21 && dia < 30){
