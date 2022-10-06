@@ -41,10 +41,8 @@ a las 15:00h. */
         int h = s.nextInt();
         System.out.println("Introduzca los minutos: ");
         int m = s.nextInt();
-        System.out.println("Faltan " + (((5*24*3600)+(15*3600)+(0*60))  -  ((d*24*3600)+(h*3600)+(m*60))) + "s para el fin de semana.");
+        System.out.println("Faltan " + (((5*24*60)+(15*60))  -  ((d*24*60)+(h*60)+m)) + "min para el fin de semana.");
 
     }
 
 }
-/*486000 - (345600+36000+420)= 486000 - 382020*/
-/*382020 */

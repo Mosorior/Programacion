@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Ej8 {
+public class Ej08 {
     /* Muestra la tabla de multiplicar de un número introducido por teclado */
     public static void main (String[] args) {
         Scanner s = new Scanner(System.in);
