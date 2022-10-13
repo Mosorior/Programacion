@@ -16,14 +16,24 @@ debe introducir por teclado. */
         int c = 0;
 
         System.out.println("\n\n FIBONNACI \n\n");
-        
-        do{
-            System.out.println(c);
-            c = a+b;
-            a = b;
-            b = c;
-            i++;
-        }while(i <= (n-1));			
+        switch(n){
+            case 1:
+            System.out.println("0");
+            break;
+            case 2:
+            System.out.println("0\n1");
+            break;
+            default:
+            System.out.println("0");
+            do{
+                a = b;
+                b = c;
+                c = a+b;
+                System.out.println(c);
+                i++;
+            }while(i < n-1);	
+        }
+        		
 	}
 
 }
