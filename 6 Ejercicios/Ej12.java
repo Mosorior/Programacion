@@ -3,19 +3,18 @@ public class Ej12 {
 /* Realiza un programa que llene la pantalla de caracteres aleatorios (a lo Matrix)
 con el código ascii entre el 32 y el 126. Puedes hacer casting con (char) para
 convertir un entero en un carácter. */
-        int rand = 0;
-        char randchar;
 
-
-        rand = (int) Math.random()*126;
-        System.out.println(rand);
-        randchar = (char)rand;
-        System.out.print(randchar + " ");
+      int linea = 0;
+      
+      System.out.print("\033[32m"); // pinta en verde
+      
+      for(int i = 0; i < 10000; i++) {
+        System.out.print((char)(Math.random() * (126 - 32 + 1) + 32));
         
-
-        for(int i = 0; i < 10000; i++){
-        
+        if (linea++ == 60) {
+          linea = 0;
+          System.out.println();
         }
+      }
     }
-    
-}
+  }
