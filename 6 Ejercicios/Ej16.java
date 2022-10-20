@@ -20,7 +20,6 @@ d) Si las tres figuras son iguales se debe mostrar “Enhorabuena, ha ganado
         System.out.println("Se generará una tirada.");
         for (int i = 0; i < 3; i++){
             x = (int)(Math.random()*5+1);
-            System.out.println(x);
             switch(x){
                 case 1:
                 figura = "corazón";
