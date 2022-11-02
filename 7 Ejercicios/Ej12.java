@@ -10,50 +10,93 @@ la posición inicial en la posición final, rotando el resto de números para qu
 se pierda ninguno. Al final se debe mostrar el array resultante. */
         Scanner s = new Scanner(System.in);
 
-        int[] num = new int[10];
-        int inicial,fin;
-        Boolean valid, valido = true;
-
-        System.out.println("Introduzca 10 números separados por enter.");
-
-        for(int i = 0; i < 10; i++){
-            num[i] = s.nextInt();
-        }
-        System.out.println("A continuación se rotará el array.\nIntroduzca la posición inicial (0-9):");
-        do{
-            do{
-                inicial = s.nextInt();
-                if(inicial < 0 || inicial > 9){
-                    valid = false;
-                    System.out.println("Ese número no es válido, vuelva a introducirlo:");
-                }
-                else{
-                    valid = true;
-                }
-            }while(valid == false);
-
-            valid = false;
-            System.out.println("Introduzca la posición final (0-9):");
-            do{
-                fin = s.nextInt();
-                if(fin < 0 || fin > 9){
-                    valid = false;
-                    System.out.println("Ese número no es válido, vuelva a introducirlo:");
-                }
-                else{
-                    valid = true;
-                }
-            }while(valid == false);
-            if(inicial >= fin){
-                valido = false;
-                System.out.println("Números inválidos, vuelva a introducirlos.\nIntroduzca la posicioón inicial.");
-            }
-            else{
-                valido = true;
-            }
-        }while(valido == false);
+        int[] n = new int[10];
+        int[] resultado = new int[10];
+        int i;
+        int nInicial;
+        int nFinal;
+        boolean valido;
         
-
-
+        System.out.println("Introduzca 10 números separados por INTRO:");
+    
+        for (i = 0; i < 10; i++) {
+          n[i] = Integer.parseInt(System.console().readLine());
+        }
+        
+        // Muestra el array original.
+        System.out.println("\n\nArray original:");
+        System.out.print("Índice ");
+        for (i = 0; i < 10; i++) {
+          System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.print("Valor  ");
+        for (i = 0; i < 10; i++) {
+          System.out.print(n[i] + " ");
+        }
+        System.out.println();
+    
+        // Pide las posiciones inicial y final.
+        do {
+          valido = true;
+          
+          System.out.print("Introduzca la posición inicial (0 - 9): ");
+          nInicial = Integer.parseInt(System.console().readLine());
+          if ((nInicial < 0) || (nInicial > 9)) {
+            System.out.println("Valor incorrecto, debe ser un número entre el 0 y el 9.");
+            valido = false;
+          }
+      
+          System.out.print("Introduzca la posición final (0 - 9): ");
+          nFinal = Integer.parseInt(System.console().readLine());
+          if ((nFinal < 0) || (nFinal > 9)) {
+            System.out.println("Valor incorrecto, debe ser un número entre el 0 y el 9.");
+            valido = false;
+          }
+          
+          if (nInicial >= nFinal) {
+            System.out.println("Valores incorrectos, la posición inicial debe ser menor que la posición final.");
+            valido = false;
+          }
+        } while (!valido);
+    
+        // Muestra de nuevo el array original.
+        System.out.println("\n\nArray original:");
+        System.out.print("Índice ");
+        for (i = 0; i < 10; i++) {
+          System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.print("Valor  ");
+        for (i = 0; i < 10; i++) {
+          System.out.print(n[i] + " ");
+        }
+        
+        // Copia el array n en resultado.
+        for (i = 0; i < 10; i++) {
+          resultado[i] = n[i];
+        }
+        
+        resultado[nFinal] = n[nInicial];
+        
+        for (i = nFinal + 1; i < 10; i++)
+          resultado[i] = n[i - 1];
+        
+        resultado[0] = n[9];
+        
+        for (i = 0; i < nInicial; i++)
+          resultado[i + 1] = n[i];
+        
+        // Muestra el resultado.
+        System.out.println("\nArray resultante:");
+        System.out.print("Índice ");
+        for (i = 0; i < 10; i++) {
+          System.out.print(i + " ");
+        } 
+        System.out.println();
+        System.out.print("Valor  ");
+        for (i = 0; i < 10; i++) {
+          System.out.print(resultado[i] + " ");
+        }
+      }
     }
-}
