@@ -142,14 +142,10 @@ public class Ej11to20{
     }
     /*--------------------------------- QUITA ESPACIOS SOBRANTES ---------------------- */
     public static String quitaEspaciosSobrantes(String x){
-        String[] y = x.split(" ");
-        String quitaEspaciosSobrantes = " ";
-        for(int i = 0; i < x.length(); i++){
-            if(y[i] == " "){
-                
-            }
-        }
+        String quitaEspaciosSobrantes = x.replaceAll(" +", " ").trim();
+        return quitaEspaciosSobrantes;
     }
+
 
 
 }
