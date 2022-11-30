@@ -2,15 +2,14 @@ public class Ej01to10{
 
     /*---------------------------------- NÚMERO ESPACIOS ----------------------------*/
     public static int numeroEspacios(String x){
-        int longi = x.length();
-        char y[] = x.toCharArray();
-        int espacios = 0;
-        for (int i = 0; i < longi; i++){
-            if(y[i]== ' '){
-                espacios++;
+        int numeroEspacios = 0;
+        for (int i = 0; i < x.length(); i++){
+            if(x.charAt(i)== ' '){
+                numeroEspacios = numeroEspacios+1;
             }
         }
-        return espacios;
+        System.out.println(numeroEspacios);
+        return numeroEspacios;
    }
 
 /*---------------------------------- NÚMERO VOCALES ----------------------------*/
@@ -19,7 +18,7 @@ public class Ej01to10{
         char x[] = y.toCharArray();
         int vocales = 0;
         for(int i = 0; i < longi; i++){
-            if (x[i] == 'a' || x[i] == 'e' || x[i] == 'i' || x[i] == 'o' || x[i] == 'u'){
+            if (x[i] == 'a' || x[i] == 'e' || x[i] == 'i' || x[i] == 'o' || x[i] == 'u' || x[i] == 'A' || x[i] == 'E' || x[i] == 'I' || x[i] == 'O' || x[i] == 'U'){
                 vocales++;
             }
         }
@@ -28,22 +27,9 @@ public class Ej01to10{
 
 /*---------------------------------- ES PALÍNDROMO ----------------------------*/
    public static boolean esPalindromo(String x){
-    int longi = x.length();
-    boolean palindromo = false;
-    if(longi == 1){
-        return true;
-    }
-    else{
-        for(int i = 0; i<longi; i++){
-            if(x.charAt(i) == x.charAt(longi-i)){
-                palindromo = true;
-            }
-            else{
-                palindromo = false;
-            }
-        }
-    }
-    return palindromo;
+    String y = x.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u").replace(" ", "").replace(".", "").replace(",", "");
+    String inversa = new StringBuilder(x).reverse().toString();
+    return inversa.equals(x);
    }
 
    /*---------------------------------- CONTIENE ----------------------------*/
@@ -60,11 +46,9 @@ public class Ej01to10{
    /*---------------------------------- REPITE CARACTER----------------------------*/
    
    public static String repiteCaracter(char x, int y){
-    char cadena[] = new char[y]; 
-    for(int i = 0; i<y; i++){
-        cadena[i] +=  x;
-    }
-    String repiteCaracter = cadena.toString();
+    
+    String repiteCaracter = repiteCaracter.valueOf(x);
+    
     return repiteCaracter;
    }
 
@@ -118,11 +102,11 @@ public class Ej01to10{
         int numSI= 0;
         int numSF = 0;
         char y[] = x.toCharArray();
-        char espaciosI[];
-        char espaciosF[];
+        char espaciosI[] = new char[x.length()];
+        char espaciosF[] = new char[x.length()];
         int j = 0;
-        char espaciosQuitados[];
-        String quitaEspaciosTrim[];
+        char espaciosQuitados[] = new char[x.length()];
+        String quitaEspaciosTrim;
         for(int i = 0; i < x.length(); i++){
             if(y[i] ==' '){
                 numSI++;
@@ -153,7 +137,9 @@ public class Ej01to10{
             espaciosF[i] = ' ';
         }
 
-        quitaEspaciosTrim = espaciosI.toString() + espaciosQuitados + espaciosF;
+        quitaEspaciosTrim = espaciosI.toString() + espaciosQuitados.toString() + espaciosF.toString();
+        return quitaEspaciosTrim;
+
         
 
 
