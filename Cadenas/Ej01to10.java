@@ -47,7 +47,9 @@ public class Ej01to10{
    
    public static String repiteCaracter(char x, int y){
     
-    String repiteCaracter = repiteCaracter.valueOf(x);
+    String repiteCaracter = " ";
+    repiteCaracter = repiteCaracter.valueOf(x);
+    repiteCaracter = repiteCaracter.repeat(y);
     
     return repiteCaracter;
    }
@@ -58,7 +60,7 @@ public class Ej01to10{
         String padLeft = "";
         char cadenaEspacios[] = new char[longi];
         cadenaEspacios[0]=' ';
-        for(int i = 0; i < longi; i++){
+        for(int i = 0; i < longi/2; i++){
             cadenaEspacios[i]= ' ';
         }
         padLeft = padLeft.valueOf(cadenaEspacios) + x;
@@ -99,46 +101,10 @@ public class Ej01to10{
 /*------------------------------------ QUITA ESPACIOS TRIM ------------------------------- */
 
    public static String quitaEspaciosTrim(String x) {
-        int numSI= 0;
-        int numSF = 0;
-        char y[] = x.toCharArray();
-        char espaciosI[] = new char[x.length()];
-        char espaciosF[] = new char[x.length()];
-        int j = 0;
-        char espaciosQuitados[] = new char[x.length()];
-        String quitaEspaciosTrim;
-        for(int i = 0; i < x.length(); i++){
-            if(y[i] ==' '){
-                numSI++;
-            }
-            if (y[i] != ' '){
-                break;
-            }
-        }
-        for(int i = x.length(); i > numSI; i--){
-            if(y[i] == ' '){
-                numSF++;
-            }
-            if (y[i] != ' '){
-                break;
-            }
-        }
-        for(int i = numSI; i < (x.length()-numSF); i++){
-            if(y[i] != ' '){
-                espaciosQuitados[j] = y[i];
-                j++;
-            }
-        }
 
-        for(int i = 0; i < numSI; i++){
-            espaciosI[i] = ' ';
-        }
-        for(int i = 0; i < numSF; i++){
-            espaciosF[i] = ' ';
-        }
+    String quitaEspaciosTrim = x.replace(" ", "");
 
-        quitaEspaciosTrim = espaciosI.toString() + espaciosQuitados.toString() + espaciosF.toString();
-        return quitaEspaciosTrim;
+    return quitaEspaciosTrim;
 
         
 
@@ -149,38 +115,25 @@ public class Ej01to10{
 /*------------------------------------- SUSTITUYE CARACTER ----------------------------- */
 
 public static String sustituyeCaracter(String x, char a, char b) {
-    char y[] = x.toCharArray();
-    for(int i = 0; i < x.length(); i++){
-        if( y[i] == a){
-            y[i] = b;
-        }
-    }
-    String sustituyeCaracter = y.toString();
-    return sustituyeCaracter;
+    return x.replace(a, b);
  }
  
  /*----------------------------------- CUENTA PALABRAS ------------------------------- */
 
    public static int cuentaPalabras(String x) {
-    boolean stop = false;
-    int j = 0;
-    char y[] = x.toCharArray();
-    int cuentaPalabras = 0;
-    while(!stop){
-        if(y[j] != ' '){
-            j++;
-            stop = true;
-        }
-        else{
-            stop = false;
+    int contador = 1, pos;
+    x = x.trim();
+    if(x.isEmpty()){
+        contador = 0;
+    }
+    else{
+        pos = x.indexOf(" ");
+        while(pos !=-1){
+            contador++;
+            pos = x.indexOf(" ", pos + 1);
         }
     }
-    for(int i = j; i < x.length(); i++){
-        if(y[i] == ' '){
-            cuentaPalabras++;
-        }
-    }
-       return cuentaPalabras;
+    return contador;
    }
 
 }

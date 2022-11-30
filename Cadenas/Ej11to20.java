@@ -2,10 +2,9 @@ public class Ej11to20{
 
     /*---------------------------------- ES NUMERO ----------------------------*/
     public static boolean esNumero(String x){
-      char y[] = x.toCharArray();
       int counter = 0;
       for(int i = 0; i < x.length(); i++){
-        if(y[i] == '0' || y[i] == '1'|| y[i] == '2' || y[i] == '3' || y[i] == '4' || y[i] == '5' || y[i] == '6' || y[i] == '7' || y[i] == '8' || y[i] == '9' ){
+        if(x.charAt(i) == '0' || x.charAt(i) == '1'||x.charAt(i) == '2' || x.charAt(i) == '3' || x.charAt(i) == '4' || x.charAt(i) == '5' || x.charAt(i) == '6' || x.charAt(i) == '7' || x.charAt(i) == '8' || x.charAt(i) == '9' ){
             counter++;
         }
       }
@@ -20,64 +19,25 @@ public class Ej11to20{
     /*--------------------------------- QUITA CARACTER ---------------------- */
 
     public static String quitaCaracter(String x, char a){
-        String quitaCaracter;
-        char[] y = x.toCharArray();
-        char[] aux = new char[x.length()];
-        int j = 0;
-        for(int i = 0; i < x.length(); i++){
-            if(y[i] != a){
-                aux[j] = y[i];
-                j++;
-            }
-        }
+        x= x.replace(String.valueOf(a), "");
+        return x;
 
-        quitaCaracter = aux.toString();
-        return quitaCaracter;
     }
 
     /*--------------------------------- QUITA ACENTOS --------------------- */
     public static String quitaAcentos(String x){
-        char[] y = new char[x.length()];
 
-        for(int i = 0; i < x.length(); i++){
-            if(y[i] == 'á' || y[i] == 'à'){
-                y[i] = 'a';
-            }
-            if(y[i] == 'è' || y[i] == 'é'){
-                y[i] = 'e';
-            }
-            if(y[i] == 'ì' || y[i] == 'í'){
-                y[i] = 'i';
-            }
-            if(y[i] == 'ò' || y[i] == 'ó' ){
-                y[i] = 'o';
-            }
 
-            if(y[i] == 'ù' || y[i] == 'ú'){
-                y[i] = 'u';
-            }
-
-        }
-        String quitaAcentos = y.toString();
-
-        return quitaAcentos;
+        return x.replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u").replace("ñ", "n");
     }
 
 
     /*--------------------------------- INVIERTE CADENA --------------------- */
     public static String invierteCadena(String x){
-        char[] y = x.toCharArray();
-        char[] aux = new char[x.length()];
-        int j = x.length();
-        for(int i = 0; i < x.length(); i++){
-            aux[i] = y[j];
-            j--;
-        }
+    
+        StringBuilder stringBuilder = new StringBuilder(x);
 
-        String invierteCadena = aux.toString();
-
-        return invierteCadena;
-
+        return stringBuilder.reverse().toString();
     }
 
     /*---------------------------------- VECES CARACTER ------------------------- */
@@ -94,13 +54,13 @@ public class Ej11to20{
     /* ----------------------------------VECES PALABRA --------------------------- */
 
     public static int vecesPalabra(String x, String a){
-        String[] y = x.split(" ");
         int vecesPalabra = 0;
         for(int i = 0; i < x.length(); i++){
-            if(y[i] == a){
+            if(x.substring(i).startsWith(a)){
                 vecesPalabra++;
             }
         }
+        
         return vecesPalabra;
         
     }
