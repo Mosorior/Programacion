@@ -1,3 +1,5 @@
+import java.util.Stack;
+import java.util.StringTokenizer;
 public class Ej11to20{
 
     /*---------------------------------- ES NUMERO ----------------------------*/
@@ -67,39 +69,37 @@ public class Ej11to20{
 
     /*------------------------------------ MAYÚSCULAS PRIMERA --------------------- */
     public static String mayusculasPrimera(String x){
-        char[] y = x.toCharArray();
-        char aux;
+        char[] c = x.toCharArray();
+        c[0] = Character.toUpperCase(c[0]);
 
-        if (y[0] != ' '){
-            y[0] = Character.toUpperCase(y[0] );
-          }
-        
-        for(int i = 0; i < x.length(); i++){
-            if( y[i] == ' ' && y[i+1] >= 97 && y[i+1] <= 122){
-                y[i+1] = Character.toUpperCase(y[i+1]);
+        for(int i = 0; i < x.length()-2; i++){
+            if(c[i] == ' ' || c[i] == '.' || c[i] == ','){
+                c[i +1] = Character.toUpperCase(c[i+1]);
             }
         }
-
-        String mayusculasPrimera = y.toString();
-
-        return mayusculasPrimera;
+        return new String(c);
+        
     }
 
     /*---------------------------------- SUSTITUYE PALABRA -------------------------- */
     public static String sustituyePalabra(String x, String a, String b){
-        String[] y = x.split(" ");
-        String sustituyePalabra = " ";
-        for(int i = 0; i < x.length(); i++){
-            if(y[i] == a){
-                y[i] = b;
-            }
-            sustituyePalabra = sustituyePalabra +" "+y[i];
-
-        }
-    
-        return sustituyePalabra;
+        return x.replaceAll(a, b);
         
     }
+    /*------------------------------------INVIERTE PALABRA */
+    public static String inviertePalabras(String x){
+        String[] palabras = x.split(" ");
+        for(int i = 0; i < palabras.length;i++){
+            palabras[i]= invierteCadena(palabras[i]);
+        }
+        String cadena = String.join(" ", palabras);
+        return cadena;
+     
+    }
+    public static String reverse(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+
     /*--------------------------------- QUITA ESPACIOS SOBRANTES ---------------------- */
     public static String quitaEspaciosSobrantes(String x){
         String quitaEspaciosSobrantes = x.replaceAll(" +", " ").trim();
