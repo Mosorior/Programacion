@@ -159,7 +159,7 @@ public class Ej01to20 {
                     break;
                 
                 case 12:
-                System.out.println("Introduzca un string: ");
+                System.out.println("Introduzca un string del cual se eliminará una letra: ");
                 x = s.next();
                 System.out.println("Introduzca el caracter a eliminar: ");
                 c = s.next().charAt(0);
