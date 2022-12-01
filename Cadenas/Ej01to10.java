@@ -82,7 +82,7 @@ public class Ej01to10{
 
 /*---------------------------------- QUITA ESPACIOS ----------------------------*/
    public static String quitaEspacios(String x) {
-        x.trim();
+        x= x.trim();
         char quitaEspacio[] = new char[100];
         quitaEspacio[0] = ' ';
         String quitaEspacios = "";

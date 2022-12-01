@@ -192,7 +192,7 @@ public class Ej01to20 {
                     x = s.next();
                     System.out.println("Introduzca el caracter a buscar: ");
                     c = s.next().charAt(0);
-                    System.out.println(c+ " se ha encontrado " + Ej11to20.vecesCaracter(x, c) + " veces.");
+                System.out.println(c+ " se ha encontrado " + Ej11to20.vecesCaracter(x, c) + " veces.");
                     System.out.println("Presiona ENTER para continuar:");
                     s.nextLine();
                     s.nextLine();

@@ -96,14 +96,10 @@ public class Ej11to20{
         return cadena;
      
     }
-    public static String reverse(String str) {
-        return new StringBuilder(str).reverse().toString();
-    }
 
     /*--------------------------------- QUITA ESPACIOS SOBRANTES ---------------------- */
     public static String quitaEspaciosSobrantes(String x){
-        String quitaEspaciosSobrantes = x.replaceAll(" +", " ").trim();
-        return quitaEspaciosSobrantes;
+        return x.replaceAll(" +", " ").trim();
     }
 
 
