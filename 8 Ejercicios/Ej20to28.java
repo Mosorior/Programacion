@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 public class Ej20to28 {
     public static void main(String[] args) {
@@ -83,6 +81,30 @@ public class Ej20to28 {
 
             System.out.println("La media de este array es " + mediaArrayInt(array));
             break;
+        
+            
+            case 5: 
+            System.out.println("Introduzca un array y un entero:");
+            System.out.print("Entero: ");
+            l = s.nextInt();
+            System.out.print("Array: ");
+            array = new int[l];
+
+            for(int i = 0; i < l; i++){
+                array[i] = s.nextInt();
+            }
+            if(estaEnArray(array, l) == true){
+                System.out.println("Ese entero está en el array");
+            }
+            else{
+                System.out.println("Ese entero no está en el array");
+            }
+            break;
+
+            case 6: 
+            System.out.println("Introduzca un array y un entero y se dirá en que posición se encuentra del array.");
+            System.out.println("Entero:")
+
         }
 
     }
@@ -128,15 +150,70 @@ public class Ej20to28 {
         return media/array.length;
     }
 
-    /*--------------------------------ESTA EN ARRAY ---------------------------------- */
+   /*--------------------------------ESTA EN ARRAY ---------------------------------- */
     public static boolean estaEnArray(int[] array, int n){
+        for (int i = 0; i < array.length; i++) {
+      if (array[i] == n) {
+        return true;
+      }
+    }
+    return false;
+    }
+    
+   /*--------------------------------POSICION EN ARRAY ---------------------------------- */
+    public static int posicionEnArray(int[] array, int n){
+        for (int i = 0; i < array.length; i++) {
+      if (array[i] == n) {
+        return i;
+      }
+    }
+    return -1;
+    }
+    
+   /*--------------------------------VOLTEA ARRAY ---------------------------------- */
+    public static int[] volteaArray(int[] array, int n){
+       int[] a = new int[array.length];
+    
+    for(int i = 0; i < array.length; i++) {
+      a[array.length - i - 1] = array[i];
+    }
+      
+    return a; 
+    }
+    
 
-        return false;
+   /*--------------------------------ROTA DERECHA ARRAY ---------------------------------- */
+    public static int[] rotaDerechaArray(int[] array, int n){
+       int[] a = array.clone();
+    int i;
+    int aux;
+    
+    while (n-- > 0) {
+      aux = a[a.length - 1];
+      for(i = a.length - 1; i > 0; i--) {
+        a[i] = a[i - 1];
+      }
+      a[0] = aux;
+    }
+      
+    return a;
     }
 
 
-
+   /*--------------------------------ROTA IZQUIERDA ARRAY ---------------------------------- */
+    public static int[] rotaIzquierdaArray(int[] array, int n){
+    int[] a = array.clone();
+    int i;
+    int aux;
+    
+    while (n-- > 0) {
+      aux = a[0];
+      for(i = 0; i < a.length - 1; i++) {
+        a[i] = a[i + 1];
+      }
+      a[a.length - 1] = aux;
+    }
+      
+    return a;
+    }
 }
-
-// er dani come pito
-// er jesús también pero no está aquí
