@@ -17,7 +17,7 @@ public class Caballo {
   }
 
   public void cabalga() {
-    System.out.println("Tocotoc tocotoc tocotoc");
+    System.out.println("Tocoto tocoto tocoto");
   }
 
   public void relincha() {

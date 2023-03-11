@@ -6,19 +6,6 @@
  *    método específico para cada una de las subclases. Prueba las
  *    clases creadas mediante un programa con un menú como el que se
  *    muestra a continuación:
- *    VEHÍCULOS
- *    =========
- *    1. Anda con la bicicleta
- *    2. Haz el caballito con la bicicleta
- *    3. Anda con el coche
- *    4. Quema rueda con el coche
- *    5. Ver kilometraje de la bicicleta
- *    6. Ver kilometraje del coche
- *    7. Ver kilometraje total
- *    8. Salir
- *    Elige una opción (1-8):
- * 
- * @author Luis José Sánchez
  */
 public class PruebaVehiculo {
 
@@ -31,6 +18,7 @@ public class PruebaVehiculo {
       Coche twingo = new Coche(1900);
   
       while (opcion != 8) {
+        System.out.println("");
         System.out.println("1. Anda con la bicicleta");
         System.out.println("2. Haz el caballito con la bicicleta");
         System.out.println("3. Anda con el coche");

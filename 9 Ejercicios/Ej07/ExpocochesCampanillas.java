@@ -1,27 +1,3 @@
-/**
- * 7. Queremos gestionar la venta de entradas (no numeradas) de
- *    Expocoches Campanillas que tiene 3 zonas, la sala principal con
- *    1000 entradas disponibles, la zona de compra-venta con 200
- *    entradas disponibles y la zona vip con 25 entradas disponibles.
- *    Hay que controlar que existen entradas antes de venderlas.
- *    La clase <code>Zona</code> con sus atributos y métodos se
- *    proporciona al alumno.
- *    <p>
- *    El menú del programa debe ser el que se muestra a continuación.
- *    Cuando elegimos la opción <code>2</code>, se nos debe preguntar
- *    para qué zona queremos las entradas y cuántas queremos.
- *    Lógicamente, el programa debe controlar que no se puedan vender
- *    más entradas de la cuenta.
- *    <p>
- *    <code>
- *    <pre> 
- *    1. Mostrar número de entradas libres
- *    2. Vender entradas
- *    3. Salir
- *    </pre>
- *    </code>
- * @author Luis José Sánchez
- */
 public class ExpocochesCampanillas {
   public static void main(String[] args) {
     

@@ -1,7 +1,3 @@
-/**
- * Programa que prueba la clase Caballo.
- * @author Luis José Sánchez
- */
 public class PruebaCaballo {
 
   public static void main(String[] args) {

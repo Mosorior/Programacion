@@ -1,8 +1,3 @@
-/**
- * Definición de la clase Zona
- * 
- * @author Luis José Sánchez
- */
 public class Zona {
   
   private int entradasPorVender;
