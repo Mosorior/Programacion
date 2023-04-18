@@ -9,6 +9,7 @@ public class Pokemon {
     private int id;
     private String nombre;
     private String tipo;
+    private String tipo2;
     private int lvl;
     private int ataque;
     private int defensa;
@@ -19,11 +20,12 @@ public class Pokemon {
     private String habilidad;
     private boolean capturado;
 
-    public Pokemon(int id, String nombre, String tipo, int lvl, int ataque, int defensa, int hp, int ataqueEspecial,
+    public Pokemon(int id, String nombre, String tipo, String tipo2, int lvl, int ataque, int defensa, int hp, int ataqueEspecial,
                    int defensaEspecial, int velocidad, String habilidad, boolean capturado) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
+        this.tipo2 = tipo2;
         this.lvl = lvl;
         this.ataque = ataque;
         this.defensa = defensa;
@@ -60,6 +62,14 @@ public class Pokemon {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    public String getTipo2() {
+        return tipo2;
+    }
+
+    public void setTipo2(String tipo2) {
+        this.tipo2 = tipo2;
+    }
+
     public int getLvl() {
         return lvl;
     }
